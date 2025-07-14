@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { loginUser } from "../api";
 
 const Signin = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -17,12 +17,16 @@ const Signin = () => {
     setMsg("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
-      localStorage.setItem("token", res.data.token);
-      setMsg("✅ Login successful");
-      setTimeout(() => navigate("/dashboard"), 1000);
+      const res = await loginUser(form.email, form.password);
+      if (res.token) {
+        localStorage.setItem("token", res.token);
+        setMsg("✅ Login successful");
+        setTimeout(() => navigate("/dashboard"), 1000);
+      } else {
+        setMsg(res.msg || "❌ Login failed");
+      }
     } catch (err) {
-      setMsg(err?.response?.data?.msg || "❌ Login failed");
+      setMsg("❌ Login failed");
     } finally {
       setLoading(false);
     }
@@ -131,7 +135,7 @@ const Signin = () => {
                 justifyContent: "center",
                 boxShadow: "0 2px 16px #ff003c55",
               }}>
-                <svg width="34" height="34" fill="white" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.93 6.588-4.39 4.39a.5.5 0 0 1-.708 0l-2.39-2.39a.5.5 0 1 1 .708-.708l2.036 2.036 4.036-4.036a.5.5 0 1 1 .708.708z"/></svg>
+                <svg width="34" height="34" fill="white" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.93 6.588-4.39 4.39a.5.5 0 0 1-.708 0l-2.39-2.39a.5.5 0 1 1 .708-.708l2.036 2.036 4.036-4.036a.5.5 0 1 1 .708.708z" /></svg>
               </div>
             </div>
             <h3 className="text-center mb-4 fw-bold" style={{ color: "#ff003c", letterSpacing: 1.5, textShadow: "0 2px 8px #ff003c55" }}>

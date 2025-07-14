@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { signupUser } from "../api";
 
 const Signup = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -18,11 +18,15 @@ const Signup = () => {
     setMsg("");
 
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
-      setMsg("✅ Account created. Redirecting to login...");
-      setTimeout(() => navigate("/signin"), 1500);
+      const res = await signupUser(form.name, form.email, form.password);
+      if (res.msg && !res.msg.includes("error")) {
+        setMsg("✅ Account created. Redirecting to login...");
+        setTimeout(() => navigate("/signin"), 1500);
+      } else {
+        setMsg(res.msg || "❌ Signup failed");
+      }
     } catch (err) {
-      setMsg(err?.response?.data?.msg || "❌ Signup failed");
+      setMsg("❌ Signup failed");
     } finally {
       setLoading(false);
     }
@@ -135,7 +139,7 @@ const Signup = () => {
                 justifyContent: "center",
                 boxShadow: "0 2px 16px #ff003c55",
               }}>
-                <svg width="34" height="34" fill="white" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.93 6.588-4.39 4.39a.5.5 0 0 1-.708 0l-2.39-2.39a.5.5 0 1 1 .708-.708l2.036 2.036 4.036-4.036a.5.5 0 1 1 .708.708z"/></svg>
+                <svg width="34" height="34" fill="white" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.93 6.588-4.39 4.39a.5.5 0 0 1-.708 0l-2.39-2.39a.5.5 0 1 1 .708-.708l2.036 2.036 4.036-4.036a.5.5 0 1 1 .708.708z" /></svg>
               </div>
             </div>
             <h3 className="mb-4 text-center fw-bold" style={{ color: "#ff003c", letterSpacing: 1.5, textShadow: "0 2px 8px #ff003c55" }}>
