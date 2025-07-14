@@ -1,0 +1,141 @@
+.sixth-section {
+  padding: 80px 20px;
+  background: #f3f6f8;
+  margin-top: 150px;
+}
+
+.sixth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  flex-wrap: wrap;
+}
+
+.sixth-header h2 {
+  font-size: 3rem;
+  color: #111;
+  margin-left: 50px;
+}
+
+.arrows button {
+  background: #020202;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 0 6px;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.testimonial-slider {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  min-width: 350px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4c5fd5;
+}
+
+.user-info span {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+@media (max-width: 980px) {
+  .sixth-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .sixth-header h2 {
+    font-size: 2.4rem;
+    margin-left: 0;
+  }
+
+  .arrows {
+    margin: 0;
+  }
+
+  .testimonial-track {
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    min-width: 280px;
+    padding: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 0.95rem;
+  }
+
+  .user-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .user-info span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sixth-section {
+    padding: 60px 16px;
+  }
+
+  .sixth-header h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    min-width: 260px;
+    padding: 20px;
+  }
+
+  .arrows button {
+    font-size: 1.6rem;
+    padding: 4px 10px;
+  }
+}

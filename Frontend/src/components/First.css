@@ -1,0 +1,107 @@
+.hero {
+  padding: 150px 80px 100px;
+  background: radial-gradient(#ddd 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.hero-inner {
+  max-width: 800px;
+  text-align: left;
+}
+
+.icon-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #00aaff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.highliht-text {
+  background-color: #dff4ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.highlight-text h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+
+.subtext {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+  max-width: 600px;
+}
+
+button {
+  margin-top: 30px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+@media (max-width: 980px) {
+  .hero {
+    padding: 100px 24px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .highlight-text h1 {
+    font-size: 40px;
+  }
+
+  .subtext {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .highlight-text h1 {
+    font-size: 32px;
+  }
+
+  .subtext {
+    font-size: 16px;
+  }
+
+  .icon-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .highliht-text {
+    padding: 8px 12px;
+  }
+
+  button {
+    width: 200px;
+    font-size: 16px;
+  }
+}

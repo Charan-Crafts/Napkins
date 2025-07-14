@@ -1,0 +1,164 @@
+/* ===== FAQ Section ===== */
+.faq-section {
+  padding: 60px 20px;
+  background: #f3e6e6;
+}
+
+.faq-heading {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #111;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #222;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background-color: #f1f1f1;
+}
+
+.faq-answer {
+  padding: 16px;
+  padding-top: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ===== GitHub CTA Section (Eighth) ===== */
+.eighth-section {
+  background: #fff;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.eighth-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.eighth-content h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #0c0c0d;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.highlight {
+  color: #414a8e;
+}
+
+.eighth-content p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.github-btn {
+  background-color: #302f2f;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+  font-style: italic;
+  text-align: left;
+}
+
+
+/* ===== Responsive Breakpoints ===== */
+
+@media (max-width: 980px) {
+  .faq-section{
+    /* max-width: 600px; */
+    padding: 0px 20px;
+    margin-left: -350px;
+  }
+  .faq-heading {
+    font-size: 2rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+
+  .eighth-content h2 {
+    font-size: 2.6rem;
+  }
+
+  .eighth-content p {
+    font-size: 1.05rem;
+  }
+
+  .github-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-section{
+    margin-left: -350px;
+  }
+  .faq-heading {
+    font-size: 1.8rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
+  }
+
+  .eighth-content h2 {
+    font-size: 2rem;
+  }
+
+  .eighth-content p {
+    font-size: 1rem;
+  }
+
+  .github-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
